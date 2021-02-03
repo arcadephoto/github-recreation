@@ -65,11 +65,7 @@ const repos = (data) => {
 
 
 
-fetch(`${BASE_URL}`, {
-  headers: {
-    Authorization: `token ${GITHUB_TOKEN}`
-  }
-})
+fetch(`${BASE_URL}`)
 .then(response => response.json())
 .then(data => generateHTML(data));
 
