@@ -7,7 +7,7 @@ const BASE_URL = 'https://api.github.com/users/arcadephoto';
 // field from the array, then sorts it in reverse chronological order. I don't know
 // what to do with it from there.
 
-
+var now = moment();
 let datearray = [];
 let testData;
 
@@ -54,6 +54,11 @@ const repos = (data) => {
   const html = template(context);
   // console.log("html", html);
   document.querySelector('.repos').innerHTML = html;
+  const getTime = document.getElementById("dateTime").innerHTML;
+  console.log(getTime);
+  const showTime = moment(getTime).fromNow();
+  console.log(showTime);
+  document.querySelector('.dateTime').innerHTML = showTime;
   // profileData.name = data.name;
   testData = data;
 }
@@ -79,9 +84,12 @@ fetch(`${BASE_URL}/repos`)
 .then(response => response.json())
 .then(data => repos({repos:data}));
 
+
+
+
 //trying to use Moment js to convert the date field from Github to
 //"<hours> hours ago" format
-const timeStuff = "test string";
-// document.getElementById('timeMoment').innerHTML = timeStuff;
-const getTime = moment().startOf('day').fromNow();
-console.log(getTime);
+// const getTime = document.getElementById("dateTime").innerHTML;
+// const showTime = moment(getTime).fromNow();
+// console.log(getTime);
+// console.log(showTime);
