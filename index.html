@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>GitHub Recreation</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row g-3 align-items-center topNav">
+      <div class="col-auto">
+        <label for="inputPassword6" class="col-form-label"><i class="fab fa-github"></i></label>
+      </div>
+      <div class="col-auto srchWindow">
+        <input type="password" id="inputPassword6" class="form-control" placeholder="Search or jump to..." aria-describedby="passwordHelpInline">
+      </div>
+      <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+        </span>
+      </div>
+      <div class="col-auto navLinks">
+        <span>Pull Requests &nbsp; Issues &nbsp; Marketplace &nbsp; Explore</span>
+      </div>
+    </div>
+
+
+    <section class="row">
+      <div class="col-3">
+        <div class="row bio"></div>
+        <div class="row editbutton"><button type="button" class="edit btn btn-outline-secondary">Edit Profile</button></div>
+        <div class="row divider"></div>
+        <div class="row orgs">
+          <h5>Organizations</h5>
+        </div>
+        <div class="row orglinks"></div>
+      </div>
+
+      <div class="topRight col-9">
+        <section class="row col-12 tabs">
+          <div class="col-auto tab"><i class="fas fa-book-open"></i>&nbsp;Overview</div>
+          <div class="col-auto tab"><i class="fas fa-laptop"></i>&nbsp;Repositories</div>
+          <div class="col-auto tab"><i class="far fa-file-alt"></i>&nbsp;Projects</div>
+          <div class="col-auto tab"><i class="fas fa-box-open"></i>&nbsp;</n>Packages</div>
+        </section>
+        <section class="row col-12">
+          <div class="col-8"><input type="password" id="inputPassword6" class="form-control" placeholder="Find a repository..." aria-describedby="passwordHelpInline"></div>
+          <div class="drop type col-auto"><button>Type: All</button></div>
+          <div class="drop langDrop col-auto"><button>Language: All</button></div>
+          <div class="drop newButton col-auto"><button><i class="fas fa-laptop"></i>New</button></div>
+        </section>
+
+        <section class="row inset1 repos">
+          <p>This is inset row 1</p>
+        </section>
+      </div>
+    </section>
+
+
+
+    <script id="gitInformation" type="text/x-handlebars-template">
+      <div><img src="{{this.avatar_url}}" alt="photo"></div>
+      <div><h2>{{this.login}}</h2>
+      <p>{{this.name}}</p></div>
+  </script>
+
+
+    <script id="getOrg" type="text/x-handlebars-template">
+      {{#each orgs}}
+        <div><img src="{{this.avatar_url}}" alt="orgavatar"></div>
+      {{/each}}
+    </script>
+
+    <script id="repos" type="text/x-handlebars-template">
+      {{#each repos}}
+        <div class="repName">
+          <h4>{{this.name}}</h4>
+        </div>
+        <div class="repDesc">{{this.description}}</div>
+        <div>
+          <span class="colCircle"><i class="fas fa-circle"></i>
+            <span class="repLang">{{this.language}} &nbsp;&nbsp; Updated:{{this.updated_at}}</span></span>
+        </div>
+        <div class="bottomLine"></div>
+      {{/each}}
+    </script>
+
+    <script src="https://kit.fontawesome.com/e501839246.js" crossorigin="anonymous"></script>
+    <script src="./scripts/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+    <script src="./scripts/code.js"></script>
+    <script src="./scripts/main.js"></script>
+
+
+
+
+
+</body>
+
+</html>

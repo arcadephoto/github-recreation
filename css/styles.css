@@ -1,0 +1,103 @@
+body {
+  box-sizing: border-box;
+}
+
+h4 {
+  padding-top: 20px;
+}
+
+.topNav {
+  color: lightgray;
+  height: 65px;
+  background-color: black;
+  margin-bottom: 30px;
+}
+
+.drop {
+  font-size: 14px;
+}
+
+.topRight button {
+  border-radius: 5px;
+  background-color: white;
+  color: darkgray;
+  border: 1px solid lightgray;
+}
+
+.newButton button {
+  background-color: #54A158;
+  color: white;
+}
+
+.fa-github {
+  font-size: xx-large;
+}
+
+.navLinks {
+  font-weight: bold;
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+.tabs {
+  padding-bottom: 20px;
+}
+
+.inset {
+  border-top: 1px solid lightgray;
+  height: 100px;
+}
+
+.bio img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.edit {
+  width: 50%;
+}
+
+.editbutton {
+  justify-content: center;
+}
+
+.divider {
+  border-bottom: 1px solid lightgray;
+  height: 40px;
+}
+
+.orgs {
+  padding-top: 20px;
+}
+
+.orgs img {
+  width: 25%;
+}
+
+.repName {
+  color: #2667CF;
+}
+
+.repLang {
+  padding-bottom: 20px;
+  font-size: small;
+  color: black;
+}
+
+.colCircle {
+  font-size: small;
+  color: red;
+}
+
+.repDesc {
+  font-size: small;
+  color: gray;
+  padding-bottom: 20px;
+}
+
+.bottomLine {
+  padding-bottom: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+/*# sourceMappingURL=styles.css.map */
