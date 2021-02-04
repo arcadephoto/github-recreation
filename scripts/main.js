@@ -28,11 +28,8 @@ const generateHTML = (data) => {
   const template = Handlebars.compile(source);
   const context = data;
   const html = template(context);
-  // console.log("html", html);
   document.querySelector('.bio').innerHTML = html;
-//extract usable informaton field from array
-//  console.log(data.name);
-  // profileData.name = data.name;
+
 }
 
 const getOrg = (data) => {
@@ -47,17 +44,19 @@ const getOrg = (data) => {
 }
 
 const repos = (data) => {
-  console.log(data);
+  // console.log(data);
   const source = document.getElementById("repos").innerHTML;
   const template = Handlebars.compile(source);
-  const context = data;
+  const context = {
+    repos: data.repos.sort((a, b) => b.id - a.id)
+  };
   const html = template(context);
   // console.log("html", html);
   document.querySelector('.repos').innerHTML = html;
   const getTime = document.getElementById("dateTime").innerHTML;
-  console.log(getTime);
+  // console.log(getTime);
   const showTime = moment(getTime).fromNow();
-  console.log(showTime);
+  // console.log(showTime);
   document.querySelector('.dateTime').innerHTML = showTime;
   // profileData.name = data.name;
   testData = data;
