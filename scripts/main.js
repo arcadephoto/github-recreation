@@ -7,7 +7,7 @@ const BASE_URL = 'https://api.github.com/users/arcadephoto';
 // field from the array, then sorts it in reverse chronological order. I don't know
 // what to do with it from there.
 
-var now = moment();
+// var now = moment();
 let datearray = [];
 let testData;
 let showTime;
