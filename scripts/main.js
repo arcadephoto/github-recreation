@@ -10,7 +10,8 @@ const BASE_URL = 'https://api.github.com/users/arcadephoto';
 var now = moment();
 let datearray = [];
 let testData;
-
+let showTime;
+let getTime;
 
 function sortTest(){
   for(let i = 0; i < testData.repos.length; i++){
@@ -44,25 +45,24 @@ const getOrg = (data) => {
 }
 
 const repos = (data) => {
-  // console.log(data);
   const source = document.getElementById("repos").innerHTML;
   const template = Handlebars.compile(source);
   const context = {
     repos: data.repos.sort((a, b) => b.id - a.id)
   };
   const html = template(context);
-  // console.log("html", html);
   document.querySelector('.repos').innerHTML = html;
-  const getTime = document.getElementById("dateTime").innerHTML;
-  // console.log(getTime);
-  const showTime = moment(getTime).fromNow();
-  // console.log(showTime);
-  document.querySelector('.dateTime').innerHTML = showTime;
-  // profileData.name = data.name;
-  testData = data;
+  // getTime = document.getElementById("dateTime").innerHTML;
+  // showTime = moment(getTime).fromNow();
+  // document.querySelector('.dateTime').innerHTML = showTime;
+  // testData = data;
 }
 
-
+// function doTime(){
+// getTime = document.getElementById("dateTime").innerHTML;
+// showTime = moment(getTime).fromNow();
+// document.querySelector('.dateTime').innerHTML = showTime;
+// }
 
 fetch(`${BASE_URL}`)
 .then(response => response.json())
